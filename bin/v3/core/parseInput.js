@@ -1,12 +1,17 @@
 export default function parseInput() {
     const [cmd, ...args] = process.argv.slice(2);
 
+    const flags = Object.fromEntries(
+        args
+            .filter(a => a.includes("="))
+            .map(a => a.split("="))
+    );
+
     return {
         cmd: cmd || null,
-        args,
-        template: cmd || null,
-        folderName: args[0] || null,
-        argsAsIs: args[0] || null,
+        folderName: flags?.folderName || null,
+        isAnnounce: flags?.isAnnounce || true,
+        showLog: flags?.showLog || false,
         toPath: process.cwd()
     };
 };

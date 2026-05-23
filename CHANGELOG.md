@@ -157,3 +157,7 @@ The format is based on Keep a Changelog.
 ## [1.3.3] - 2026-05-23
 
 - v3 tested npm local
+
+## [1.3.4] - 2026-05-23
+
+- more flags sent

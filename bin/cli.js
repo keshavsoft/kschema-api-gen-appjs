@@ -3,10 +3,10 @@
 import getLatestVersion from "./core/getLatestVersion.js";
 import loadRunner from "./core/loadRunner.js";
 
-const run = () => {
+const run = async () => {
   const version = getLatestVersion();
-  const runner = loadRunner(version);
-  runner();
+  const runner = await loadRunner(version);
+  await runner();
 };
 
-run();
+run().then();

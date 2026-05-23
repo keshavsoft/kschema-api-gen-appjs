@@ -1,15 +1,15 @@
 import { locateSource } from "./Helpers/steps/locateSource.js";
 import { locateDestination } from "./Helpers/steps/locateDestination.js";
 import { createFolder } from "../core/createFolder.js";
-import { updateAppJs } from "./Helpers/steps/UpdateAppJs/index.js";
+import updateAppJs from "./Helpers/steps/UpdateAppJs/index.js";
 
 import { announce } from "./Helpers/steps/announce.js";
 
 import resolveFolderName from "./Helpers/steps/resolveFolderName.js";
 
-export default ({ folderName = "", toPath, isAnnounce = true, checkBeforeCreate = true }) => {
-    console.log("folderName : ", folderName);
-
+export default ({ folderName = "", toPath, isAnnounce = true, checkBeforeCreate = true,
+    showLog = false
+}) => {
     const localToPath = toPath;
 
     const resolvedFolderName = resolveFolderName({
@@ -31,13 +31,14 @@ export default ({ folderName = "", toPath, isAnnounce = true, checkBeforeCreate 
         isAnnounce, checkBeforeCreate
     });
 
-    // console.log("bbbbbbbbbbbbbbbb : ", createFolderResponse);
-
     if (createFolderResponse.KTF) {
-        updateAppJs({
+        const fromUpdate = updateAppJs({
             appJsPath: `${localToPath}/app.js`,
-            endpoint: resolvedFolderName
+            endpoint: resolvedFolderName,
+            showLog
         });
+
+        if (showLog) console.log("fromUpdate : ", fromUpdate);
     };
 
     if (isAnnounce) announce({ inResolvedFolderName: resolvedFolderName });

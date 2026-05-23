@@ -17,7 +17,8 @@ const startFunc = async () => {
 
     fn({
         folderName: "aaaaaaaaaaa",
-        toPath: process.cwd()
+        toPath: process.cwd(),
+        showLog: true
     });
 };
 

@@ -1,10 +1,29 @@
 import getLatestVersion from "./bin/core/getLatestVersion.js";
 
-const load = async (cmd) => {
+const load = async () => {
     const v = getLatestVersion();
-    return (await import(`./bin/${v}/commands/exportCommands/${cmd}.js`)).default;
+
+    return import(`../bin/${v}/core/resolveCommand.js`);
 };
 
-export const StartEndPoint = async (...a) => (await load("StartEndPoint"))(...a);
-export const init = async (...a) => (await load("init"))(...a);
-export const tally = async (...a) => (await load("tally"))(...a);
+const startFunc = async ({ inCommandToSend, inFolderName,
+    inToPath
+}) => {
+    const { default: run } = await load();
+
+    const fn = run(inCommandToSend);
+
+    fn({
+        folderName: inFolderName,
+        toPath: inToPath,
+        showLog: false,
+        isAnnounce: false
+    });
+};
+
+export const StartEndPoint = async ({ inFolderName, inToPath }) => {
+    return startFunc({
+        inCommandToSend: "StartEndPoint",
+        inFolderName, inToPath
+    });
+};

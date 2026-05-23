@@ -2,21 +2,11 @@ import StartEndPoint from "../StartEndPoint/index.js";
 import AddSubRoute from "../AddSubRoute/index.js";
 import AddTableName from "../Tables/index.js";
 
-import Insert from "../tasks/actions/insert.js";
-import ShowAll from "../tasks/actions/showAll.js";
-
-import CreateApi from "../Orchestration/CreateApi/createApi.js";
-import InsertApi from "../Orchestration/InsertApi/insertApi.js";
-
 // resolveCommand.js
 const map = {
     StartEndPoint,
     AddSubRoute,
-    AddTableName,
-    ShowAll,
-    CreateApi,
-    InsertApi,
-    Insert
+    AddTableName
 };
 
 export default function resolveCommand(cmd) {

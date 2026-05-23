@@ -5,7 +5,7 @@ const load = async () => {
 
     const module = await import(`./bin/${v}/StartEndPoint/index.js`);
 
-    return module.default;
+    return await module.default;
 };
 
 export default load;

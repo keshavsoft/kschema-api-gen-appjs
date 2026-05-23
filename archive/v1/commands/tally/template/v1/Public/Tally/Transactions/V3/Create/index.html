@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tailwind Navbar Test</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Heroicons (SVG inline, no extra CDN needed) -->
+
+    <style>
+        mark {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <main class="flex-grow">
+        <!-- NAVBAR -->
+
+
+        <!-- MOBILE NAV (collapsed with hamburger) -->
+        <nav class="bg-gray-800 text-white">
+
+            <div class="mx-auto px-3 py-3 
+            max-w-3xl 
+            lg:max-w-5xl 
+            xl:max-w-full xl:px-10">
+
+                <div class="flex flex-wrap items-center justify-between md:justify-center lg:justify-start">
+                    <div class="text-xl font-semibold md:mr-8">Masters (Mobile)</div>
+                    <button onclick="document.getElementById('menu').classList.toggle('hidden')"
+                        class="text-xl px-4 py-1 md:hidden">
+                        ☰
+                    </button>
+
+
+                    <!-- collapsible menu -->
+                    <ul id="menu" class="w-full hidden flex flex-col space-y-2 mt-4
+md:flex md:flex-row md:space-y-0 md:gap-4 md:mt-0 md:w-auto md:flex-wrap
+ lg:ml-auto">
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </nav>
+
+        <!-- body -->
+        <section class="mx-auto px-3 py-6 
+                max-w-3xl 
+                lg:max-w-5xl 
+                xl:max-w-6xl">
+
+            <!-- Table container -->
+
+            <div id="kSTableContainer">
+            </div>
+        </section>
+
+
+
+    </main>
+    <footer class="bg-gray-200 text-gray-700 text-center py-4">
+        <div class="max-w-6xl mx-auto px-4">
+            © 2026 KeshavSoft • Contact
+        </div>
+    </footer>
+
+    <!-- <script type="module" src="./index.js"></script> -->
+  <script type="module" src="./Index/start.js"></script>
+</body>
+
+</html>

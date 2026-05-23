@@ -1,0 +1,13 @@
+
+POST http://localhost:3000/Api/V1/ItemsTable/Insert
+Content-Type: application/json
+
+{
+  "StockItemName": "",
+  "Rate": "",
+  "Qty": "",
+  "Amount": "",
+  "TaxPer": "",
+  "Uom": "",
+  "ParentPk": ""
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tailwind Navbar Test</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Heroicons (SVG inline, no extra CDN needed) -->
+
+    <style>
+        mark {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <main class="flex-grow">
+        <!-- NAVBAR -->
+
+        <nav class="bg-gray-900 text-white relative z-50">
+            <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
+
+                <!-- LEFT: BRAND -->
+                <div class="text-lg font-semibold">
+                    Bill
+                </div>
+
+                <!-- RIGHT: HAMBURGER (MOBILE ONLY) -->
+                <button id="menuBtn" onclick="toggleMenu()" class="md:hidden text-2xl select-none">
+                    ☰
+                </button>
+
+                <!-- RIGHT: MENU -->
+                <ul id="menu" class="absolute left-0 top-full w-full bg-gray-800
+overflow-hidden max-h-0 opacity-0 transition-all duration-300
+flex-col space-y-4 px-6 py-4
+md:static md:flex md:flex-row md:bg-transparent md:shadow-none
+md:space-y-0 md:space-x-10 md:p-0 md:w-auto md:max-h-none md:opacity-100" transition-all duration-300 ease-in-out>
+
+                    <!-- ITEM -->
+                    <li onclick="closeMenu()"
+                        class="flex justify-between items-center md:flex-col md:items-center cursor-pointer hover:bg-gray-700 px-2 py-1 rounded transition-colors duration-200">
+                        <span class="md:order-2 font-medium">Home</span>
+                        <svg class="w-6 h-6 md:order-1 md:mb-1" stroke-width="0.75" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                                d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V10z" />
+                        </svg>
+                    </li>
+
+
+                    <li>
+                        <a href="../Create/index.html"
+                            class="flex justify-between items-center md:flex-col md:items-center cursor-pointer hover:bg-gray-700 px-2 py-1 rounded transition-colors duration-200">
+                            <span class="md:order-2 font-medium">Create</span>
+                            <svg class="w-6 h-6 md:order-1 md:mb-1" stroke-width="0.75" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                                    d="M3 7h18M3 12h18M3 17h18" />
+                            </svg>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="../Delete/index.html"
+                            class="flex justify-between items-center md:flex-col md:items-center cursor-pointer hover:bg-gray-700 px-2 py-1 rounded transition-colors duration-200">
+                            <span class="md:order-2 font-medium">Delete</span>
+                            <svg class="w-6 h-6 md:order-1 md:mb-1" stroke-width="0.75" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                                    d="M20 13V7a2 2 0 00-2-2h-3V3H9v2H6a2 2 0 00-2 2v6m16 0v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6m16 0H4" />
+                            </svg>
+                        </a>
+                    </li>
+
+
+                    <li id="toTallyId"
+                        class="flex justify-between items-center md:flex-col md:items-center cursor-pointer hover:bg-gray-700 px-2 py-1 rounded transition-colors duration-200">
+                        <span class="md:order-2 font-medium">ToTally</span>
+                        <svg class="w-6 h-6 md:order-1 md:mb-1" stroke-width="0.75" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                                d="M9 14l2 2 4-4M7 7h10M7 11h10M5 3h14a2 2 0 012 2v16l-3-2-3 2-3-2-3 2-3-2-3 2V5a2 2 0 012-2z" />
+                        </svg>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div id="kSTableContainer" class="max-w-6xl mx-auto p-2">
+            <div class="firstRowClass flex items-center justify-between px-6 pt-2 pb-2">
+                <div class="flex items-center gap-3">
+                    <h5 class="tableNameClass text-lg font-semibold text-gray-900">
+                        Table Name
+                    </h5>
+                </div>
+
+                <!-- RIGHT (compact search) -->
+                <div class="relative w-full max-w-md">
+                    <input type="text" placeholder="search..."
+                        class="tableSearchClass ks-search-allColumns w-full h-9 pl-3 pr-9 text-sm border border-gray-300 rounded-md focus:border-gray-900 focus:ring-0 outline-none" />
+
+                    <svg class="absolute right-2 top-2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-5.2-5.2M15 10a5 5 0 11-10 0 5 5 0 0110 0z" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- TABLE -->
+            <div class="rounded-b-lg shadow-md overflow-x-auto tableParent">
+                <table class="table w-full bg-white">
+                    <thead class="theadClass"></thead>
+                    <tbody class="tbodyClass"></tbody>
+                    <tfoot class="tFootClass"></tfoot>
+                </table>
+            </div>
+
+            <div class="dataListContainerClass">
+
+            </div>
+        </div>
+
+        <div id="ksSubTableContainer" class="max-w-6xl mx-auto p-2">
+            <div class="firstRowClass flex items-center justify-between px-6 pt-2 pb-2">
+                <div class="flex items-center gap-3">
+                    <h5 class="tableNameClass text-lg font-semibold text-gray-900">
+                        Items
+                    </h5>
+                </div>
+
+                <!-- RIGHT (compact search) -->
+                <div class="relative w-full max-w-md">
+                    <input type="text" placeholder="search..."
+                        class="tableSearchClass ks-search-allColumns w-full h-9 pl-3 pr-9 text-sm border border-gray-300 rounded-md focus:border-gray-900 focus:ring-0 outline-none" />
+
+                    <svg class="absolute right-2 top-2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-5.2-5.2M15 10a5 5 0 11-10 0 5 5 0 0110 0z" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- TABLE -->
+            <div class="rounded-b-lg shadow-md overflow-x-auto tableParent">
+                <table class="table w-full bg-white">
+                    <thead class="theadClass"></thead>
+                    <tbody class="tbodyClass"></tbody>
+                    <tfoot class="tFootClass"></tfoot>
+                </table>
+            </div>
+
+            <div class="dataListContainerClass">
+
+            </div>
+        </div>
+
+    </main>
+    <footer class="bg-gray-200 text-gray-700 text-center py-4">
+        <div class="max-w-6xl mx-auto px-4">
+            © 2026 KeshavSoft • Contact
+        </div>
+    </footer>
+
+    <script type="module" src="./Index/start.js"></script>
+</body>
+
+</html>

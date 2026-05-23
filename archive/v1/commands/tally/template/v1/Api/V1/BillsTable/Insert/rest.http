@@ -1,0 +1,12 @@
+
+POST http://localhost:3000/Api/V1/BillsTable/Insert
+Content-Type: application/json
+
+{
+  "LedgerName": "",
+  "LedgerParentName": "",
+  "LedgerGST": "",
+  "InvoiceNo": "",
+  "InvoiceDate": "",
+  "InvoiceStateCode": ""
+}

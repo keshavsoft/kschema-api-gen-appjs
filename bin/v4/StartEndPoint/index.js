@@ -7,9 +7,11 @@ import { announce } from "./Helpers/steps/announce.js";
 
 import resolveFolderName from "./Helpers/steps/resolveFolderName.js";
 
-export default ({ folderName = "", toPath, isAnnounce = true, checkBeforeCreate = true,
-    showLog = false
+export default ({ folderName = "", toPath, isAnnounce = true,
+    checkBeforeCreate = true, showLog = false
 }) => {
+    console.log("aaaaaaaaaa : ", folderName);
+
     const localToPath = toPath;
 
     const resolvedFolderName = resolveFolderName({

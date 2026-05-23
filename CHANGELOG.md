@@ -161,3 +161,7 @@ The format is based on Keep a Changelog.
 ## [1.3.4] - 2026-05-23
 
 - more flags sent
+
+## [1.4.1] - 2026-05-23
+
+- only for appjs

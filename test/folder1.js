@@ -1,8 +1,10 @@
 import index from "../index.js";
 
 const startFunc = async () => {
-    index({
-        folderName: "aaaaaaaaaaa",
+    const fn = await index();
+
+    await fn({
+        folderName: "folder1",
         toPath: process.cwd(),
         showLog: false,
         isAnnounce: false

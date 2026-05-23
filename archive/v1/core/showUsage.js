@@ -22,20 +22,27 @@ export default function showUsage(version) {
     const r = "\x1b[0m";
 
     console.log(`
-${c}🚀 KSchema CLI v${version}${r}
+${c}🚀 KSchema Api Generator v${version}${r}
 
 ${y}Usage:${r}
   ${g}npx @keshavsoft/kschema-api-gen${r} <command> [options]
 
 ${y}Commands:${r}
   ${g}StartEndPoint${r}     Initialize a new folder and files
-  ${g}express${r}           Initialize a new express project
-  ${g}tally${r}             Initialize a new tally project
-  ${g}generate-samples${r}  Generate sample schema files
-
+  ${g}AddSubRoute${r}       Initialize a new folder and files
+  ${g}AddTableName${r}      Initialize a new folder and files for TableName
+  ${g}ShowAll${r}           Initialize a new folder and files for action
+  
+  ${g}CreateApi${r}         Creates new end point and hooks to app.js
+  ${g}InsertApi${r}         Creates new InsertApi end point and hooks to app.js
+  
 ${y}Examples:${r}
   ${gray}npx @keshavsoft/kschema-api-gen StartEndPoint${r}
-  ${gray}npx @keshavsoft/kschema-cli test users${r}
+  ${gray}npx @keshavsoft/kschema-api-gen AddSubRoute${r}
+  ${gray}npx @keshavsoft/kschema-api-gen AddTableName${r}
+  ${gray}npx @keshavsoft/kschema-api-gen ShowAll${r}
+  ${gray}npx @keshavsoft/kschema-api-gen CreateApi Api/V1/journals/ShowAll${r}
+  ${gray}npx @keshavsoft/kschema-api-gen InsertApi Api/V1/journals/Insert${r}
 
 ${y}Tip:${r}
   ${gray}npm i -g @keshavsoft/kschema-api-gen${r}

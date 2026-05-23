@@ -1,16 +1,12 @@
-import StartEndPoint from "../commands/startEndPoint.js";
-import test from "../commands/test.js";
-import generateSamples from "../commands/generateSamples.js";
-import express from "../commands/express.js";
-import tally from "../commands/tally.js";
+import StartEndPoint from "../StartEndPoint/index.js";
+import AddSubRoute from "../AddSubRoute/index.js";
+import AddTableName from "../Tables/index.js";
 
 // resolveCommand.js
 const map = {
     StartEndPoint,
-    test,
-    "generate-samples": generateSamples,
-    express,
-    tally
+    AddSubRoute,
+    AddTableName
 };
 
 export default function resolveCommand(cmd) {

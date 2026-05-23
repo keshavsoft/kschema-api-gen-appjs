@@ -1,5 +1,7 @@
 import path from "path";
 
-export const locateDestination = ({ inResolvedFolderName }) => {
-    return path.join(process.cwd(), inResolvedFolderName);
+export const locateDestination = ({ inResolvedFolderName , toPath }) => {
+    const localToPath = toPath;
+    
+    return path.join(localToPath, inResolvedFolderName);
 };

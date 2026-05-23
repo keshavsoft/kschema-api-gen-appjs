@@ -6,5 +6,7 @@ export default function parseInput() {
         args,
         template: cmd || null,
         folderName: args[0] || null,
+        argsAsIs: args[0] || null,
+        toPath: process.cwd()
     };
 };

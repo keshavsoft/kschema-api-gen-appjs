@@ -1,13 +1,15 @@
-import { locateSource } from "./StartEndPoint/steps/locateSource.js";
-import { locateDestination } from "./StartEndPoint/steps/locateDestination.js";
+import { locateSource } from "./Helpers/steps/locateSource.js";
+import { locateDestination } from "./Helpers/steps/locateDestination.js";
 import { createFolder } from "../core/createFolder.js";
-import { updateAppJs } from "./StartEndPoint/steps/UpdateAppJs/index.js";
+import { updateAppJs } from "./Helpers/steps/UpdateAppJs/index.js";
 
-import { announce } from "./StartEndPoint/steps/announce.js";
+import { announce } from "./Helpers/steps/announce.js";
 
-import resolveFolderName from "./StartEndPoint/steps/resolveFolderName.js";
+import resolveFolderName from "./Helpers/steps/resolveFolderName.js";
 
 export default ({ folderName = "", toPath, isAnnounce = true, checkBeforeCreate = true }) => {
+    console.log("folderName : ", folderName);
+
     const localToPath = toPath;
 
     const resolvedFolderName = resolveFolderName({

@@ -1,6 +1,6 @@
 {
   "name": "kschema-api-gen-appjs",
-  "version": "1.4.2",
+  "version": "1.5.1",
   "description": "CLI to build for appjs, the endpoints",
   "keywords": [
     "cli",

@@ -165,3 +165,7 @@ The format is based on Keep a Changelog.
 ## [1.4.1] - 2026-05-23
 
 - only for appjs
+
+## [1.5.3] - 2026-05-23
+
+- app use perfect

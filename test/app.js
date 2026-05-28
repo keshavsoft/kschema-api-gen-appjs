@@ -25,7 +25,7 @@ app.use("/Api", routerFromApi);
 app.use("/V4", routerFromV4);
 app.use("/WhatsApp", WhatsApp);
 
-app.use("/Secured", routerFromSecured);;
+app.use("/Secured", routerFromSecured);
 
 StartFuncFromWebSocketServer(server);
 

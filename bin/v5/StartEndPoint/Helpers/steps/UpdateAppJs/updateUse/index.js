@@ -26,8 +26,10 @@ const updateAppUse = ({ appJsPath, endpoint, showLog = false }) => {
     const before = content.slice(0, index);
     const lineNumber = before.split("\n").length + 1;
 
-    const updated =
+    const updated1 =
         before + "\n" + useLine + content.slice(index);
+    const updated =
+        before + "\n" + useLine + "\n" + content.slice(index);
 
     writeFile(appJsPath, updated);
 
@@ -35,7 +37,7 @@ const updateAppUse = ({ appJsPath, endpoint, showLog = false }) => {
     summary.use.line = lineNumber;
 
     if (showLog) console.log(summary);
-    
+
     return summary;
 };
 

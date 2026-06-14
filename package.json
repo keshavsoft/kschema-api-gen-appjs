@@ -1,6 +1,6 @@
 {
   "name": "kschema-api-gen-appjs",
-  "version": "1.6.1",
+  "version": "1.7.1",
   "description": "CLI to build for appjs, the endpoints",
   "keywords": [
     "cli",
@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "@keshavsoft/kschema": "^1.17.8",
-    "@keshavsoft/kschema-api-check": "^1.12.1"
+    "@keshavsoft/kschema-api-check": "^1.12.1",
+    "express-fix-any-js": "^1.2.5"
   },
   "type": "module",
   "exports": {
